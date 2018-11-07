@@ -12,7 +12,7 @@ class SourceFormat(Enum):
 parser = argparse.ArgumentParser()
 parser.add_argument("--word-source", "-s", type=argparse.FileType("r"),
                     default="./openthesaurus.txt")
-parser.add_argument("--source-format", "-f", choices=dir(SourceFormat))
+parser.add_argument("--source-format", "-f", type=SourceFormat)
 parser.add_argument("string")
 args = parser.parse_args()
 
